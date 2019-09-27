@@ -2,11 +2,11 @@
 Jenkinsfile (Declarative Pipeline)
 
 pipeline {
-    agent { docker { image 'python:3.5.1' } }
+    agent { label 'master' }
     stages {
-        stage('build') {
+        stage('First build') {
             steps {
-                sh 'python --version'
+                sh 'ping ya.ru -c 4'
             }
         }
     }
