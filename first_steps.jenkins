@@ -12,7 +12,7 @@ pipeline {
         timestamps()
          }
     stages {
-         stage("Docker login ") {
+         stage("Docker login") {
             steps {
                 echo "----Docker login-----"
                 withCredentials([usernamePassword(credentialsId: 'dockerhub_alexmalukr', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
@@ -22,7 +22,7 @@ pipeline {
                 }
             }
          }
-        stage("create Docker image ") {
+        stage("create Docker image") {
             steps {
                 echo "----Create Docker image-----"
                 dir ('docker')
