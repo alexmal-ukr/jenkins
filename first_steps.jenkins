@@ -31,5 +31,14 @@ pipeline {
                 }
             }
         }
+        stage("Docker push") {
+            steps {
+                echo "----Docker push-----"
+                sh '''
+               docker push alexmalukr/first_step:latest
+               '''
+                }
+            }
+         }
     }
 }
