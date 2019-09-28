@@ -17,7 +17,7 @@ pipeline {
                 echo "----Create Docker image-----"
                 dir ('docker')
                 {
-                sh 'docker build -t first_step:latest .'
+                sh 'docker build -t alexmalukr/first_step:latest .'
                 }
             }
         }
