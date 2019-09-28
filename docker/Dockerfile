@@ -1,5 +1,1 @@
-FROM alpine
-RUN apk add ---no-cache curl wget python py-pip
-RUN pip install awscli
-RUN apk –purge –v del py-pip
-CMD tail –f /dev/null
+docker run hello-world
