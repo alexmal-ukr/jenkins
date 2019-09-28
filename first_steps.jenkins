@@ -4,16 +4,20 @@ properties([disableConcurrentBuilds()])
 
 pipeline {
     agent { 
-        label 'slave01'
+        label 'master'
         }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
     stages {
-        stage("First step") {
+        stage("create Docker image ") {
             steps {
-                sh 'hostname'
+                echo "----Create Docker image-----"
+                dir ('/docker/DockerFile')
+                {
+                sh 'docker build .'
+                }
             }
         }
     }
